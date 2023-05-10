@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: twentythree-degrees-app-service
+spec:
+  selector:
+    app: twentythree-degrees-app
+  ports:
+    - protocol: TCP
+      port: 4000
+      targetPort: 4000
+  type: ClusterIP
