@@ -1,0 +1,17 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: twentythree-degrees-app
+spec:
+  hosts:
+  - twentythree-degrees-app
+  http:
+  - route:
+    - destination:
+        host: twentythree-degrees-app
+        subset: v1
+      weight: 80
+    - destination:
+        host: twentythree-degrees-app
+        subset: v2
+      weight: 20

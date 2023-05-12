@@ -1,0 +1,27 @@
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+  name: twentythree-degrees-app-v2
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: twentythree-degrees-app
+  template:
+    metadata:
+      labels:
+        app: twentythree-degrees-app
+        version: v2
+    spec:
+      containers:
+      - name: twentythree-degrees-app
+        image: abjadzera/twentythree-degrees-app:v4
+        ports:
+        - containerPort: 4000
+        resources:
+          limits:
+            memory: 512Mi
+            cpu: "1"
+          requests:
+            memory: 256Mi
+            cpu: "0.2"
