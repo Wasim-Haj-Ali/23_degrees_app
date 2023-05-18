@@ -13,5 +13,5 @@ RUN yarn install
 RUN yarn build
 
 # Starting the application
-CMD ["npm", "run", "serve:ssr"]
+CMD ["yarn", "run", "serve:ssr"]
 
